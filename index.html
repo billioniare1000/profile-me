@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> profile me</title>
+    <link rel="stylesheet" href="style.css" />
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
+      rel=stylesheet>
+</head>
+<body>
+    <div class="clip-path"></div>
+    <header>
+        <a href="" class="logo">porto <span>folio</span></a>
+        <div class="navbar">
+            <ul>
+                <li><a href="#projects" >Projects</a></li>
+                <li><a href="#skills" > Skills  </a></li>
+                <li><a href="#certificates" >My Certificates</a></li>
+                <li><a href="#feedback" > about the projects</a></li>
+                <li><a href="#contact" >Contact</a></li>
+                <li><a href="#gallery" > Photo Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="text">
+        <h1>
+            Hello, <br/>
+            je Suis <span>B</span>illionaire<br/>
+            Developpeur<br />
+            <span>Front-end</span>
+        </h1>
+        <p>
+            My name is the main character and my goal 
+            is to become a billionaire... 
+            I started learning Front-end a short time ago 
+            and currently I am training to work in a company
+             and I am continuing training... 
+            and currently with the training 
+            I am working on learning cyber security as well
+        </p>
+        <a href="" class="btn"> Telecharger mon CV</a>
+    </div>
+    <div class="img">
+        <img src="./immmg/WhatsApp Image 2024-09-09 at 2.18.32 PM (1).jpeg" />
+
+    </div>
+    <section id="projects">
+        <h2>Projects ></h2>
+        <div class="project-list">
+          <!-- أضف مشروعًا هنا -->
+          <div class="project">
+            <h3> Mahalak  </h3>
+            <p>          It is an idea that means that the website is still being worked on and 
+                is a simple website that acts as an intermediary between the merchant and the customer. .</p>
+            <a href=" https://github.com/billioniare1000/mahalak"> Project Show >  </a>
+          </div>
+          <div class="project">
+            <h3>  My first work </h3>
+            <p>    This was my first project when I first learned and started applying.       .</p>
+            <a href=" https://github.com/billioniare1000/one-1.git  ">   Project Show ></a>
+          </div>
+          <div class="project">
+            <h3>  calculator project </h3>
+            <p> This is a very nice looking calculator that does the operations correctly  .</p>
+            <a href=" https://github.com/billioniare1000/calculator.git  "> Project Show >  </a>
+          </div>
+          
+           
+          <!-- كرر هذه الكتلة لكل مشروع -->
+        </div>
+    </section>
+    <br />
+
+<section id="skills">
+  <h2> Skills:</h2>
+  <div class="skills-list">
+      <div class="skill">
+          <h3>HTML/CSS</h3>
+          <div class="skill-bar">
+              <div class="progress" style="width: 90%;"></div>
+          </div>
+      </div>
+      <div class="skill">
+          <h3>JavaScript</h3>
+          <div class="skill-bar">
+              <div class="progress" style="width: 80%;"></div>
+          </div>
+      </div>
+      <div class="skill">
+          <h3>React.js</h3>
+          <div class="skill-bar">
+              <div class="progress" style="width: 75%;"></div>
+          </div>
+      </div>
+              <div class="skill">
+                <h3>Next.js</h3>
+                <div class="skill-bar">
+                    <div class="progress" style="width: 69%;"></div>
+                
+          </div>
+      </div>
+       
+  </div>
+</section>
+<br>
+
+<section id="certificates">
+  <h2> My Certificates:</h2>
+  <div class="certificate-list">
+      <div class="certificate">
+          <h3>Front-end Development Certificate</h3>
+          <p>Issued by [youtube course ]</p>
+      </div>
+      <div class="certificate">
+          <h3>Cyber Security Basics</h3>
+          <p>Issued by [   youtube course  ]</p>
+      </div>
+      
+  </div>
+</section>
+
+<section id="feedback">
+  <h2>  My opinions about the projects  </h2>
+  <div class="feedback-list">
+      <div class="feedback">
+          <p>"عمل ممتاز على مشروع ماهلك، كان تأثيره كبير على فريق العمل."</p>
+          <h4>- [ ibrahim Kassab  ]</h4>
+      </div>
+      <div class="feedback">
+          <p>"تطوير حاسبة رائع، يعمل بشكل سلس ويوفر الوقت."</p>
+          <h4>- [ Ahmed Hany ]</h4>
+      </div>
+      <!-- أضف المزيد من التعليقات هنا -->
+  </div>
+</section>
+
+  <section id="contact">
+  <h2>  Contact me ></h2>
+  <form id="contact-form">
+    <label for="name"> name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">  The email :</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message"> message:</label>
+    <textarea id="message" name="message" required></textarea>
+    
+    <button type="submit"> send ></button>
+  </form>
+</section>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert(result.message);
+    } else {
+      alert(result.error);
+    }
+  });
+</script>
+
+<section id="gallery">
+  <h2>    Photo Gallery ></h2>
+  <div class="gallery-list">
+      <div class="gallery-item">
+          <img src="./immmg/WhatsApp Image 2024-09-10 at 3.07.03 PM.jpeg" alt="Project Image">
+      </div>
+      <div class="gallery-item">
+          <img src="./immmg/WhatsApp Image 2024-09-10 at 1.17.48 AM.jpeg" alt="Project Image">
+      </div>
+      <div class="gallery-item">
+        <img src="./immmg/WhatsApp Image 2024-09-10 at 3.09.18 PM.jpeg" alt="Project Image">
+    </div>
+    <div class="gallery-item">
+      <img src="./immmg/WhatsApp Image 2024-09-10 at 3.10.12 PM.jpeg" alt="Project Image">
+  </div>
+  <div class="gallery-item">
+    <img src="./immmg/WhatsApp Image 2024-09-10 at 3.10.25 PM.jpeg" alt="Project Image">
+</div>
+<div class="gallery-item">
+  <img src="./immmg/WhatsApp Image 2024-09-10 at 3.15.29 PM.jpeg" alt="Project Image">
+</div>
+      </div>
+      
+         </section> 
+       
+
+
+
+
+
+
+ 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+<div class="gontainer">
+  <h2>Social Media ></h2>
+  
+  <a href="https://www.facebook.com/said.elgyed?mibextid=ZbWKwL" class="icons facebook" id="fb">
+      <i class="bx bxl-facebook"></i>
+  </a>
+  <a href="https://x.com/Elsayed67512549" class="icons twitter">
+      <i class="bx bxl-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/billionaire8670?igsh=MWw1YzQyMDF5a203bg==" class="icons instagram">
+      <i class="bx bxl-instagram"></i>
+  </a>
+  <a href="https://github.com/billioniare1000" class="icons git">
+      <i class="bx bxl-github"></i>
+  </a>
+  <a href="https://youtube.com/@saidseka9158?si=ziTv6J9UupdVbKtc" class="icons yt">
+      <i class="bx bxl-youtube"></i>
+  </a>
+</div>
+
+
+ <div class="link">
+  <a href="https://youtube.com/@saidseka9158?si=ziTv6J9UupdVbKtc">You Tube</a> 
+</div>
+</body>
+</html>
